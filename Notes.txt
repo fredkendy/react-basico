@@ -1,0 +1,13 @@
+npx create-react-app <nome-projeto>
+npm start 
+
+node_modules: bibliotecas, funções que o react tem a disposição
+src: css, js, imagens
+    App.js 
+
+React renderiza em tempo real (ao msm tempo das alterações no código fonte)
+
+-render: dispor elementos html
+    index.js contém o render
+
+-Componentes são reutilizáveis
