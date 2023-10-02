@@ -1,21 +1,21 @@
 // Importar módulos
 import React from 'react';
-import ReactDOM  from 'react-dom';
+import ReactDOM from 'react-dom';
 
-//Importar componentes
-import Componente01 from './Componente01';
-import Componente02 from './Componente02';
-
-//Componente do arquivo index.js
-class Principal extends React.Component {
+// Componente
+class Componente extends React.Component {
     render() {
         return(
             <div>
-                <Componente01 />
-                <Componente02 />
+                <p>{this.props.informacoes.nome}</p>
+                <p>{this.props.informacoes.idade}</p>
             </div>
-        )
+        );
     }
 }
 
-ReactDOM.render(<Principal />, document.getElementById('root'))
+// JSON
+var dados = {nome: "Fred", idade: 22};
+
+// Render
+ReactDOM.render(<Componente informacoes={dados} />, document.getElementById('root'));

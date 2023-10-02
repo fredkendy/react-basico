@@ -11,3 +11,6 @@ React renderiza em tempo real (ao msm tempo das alterações no código fonte)
     index.js contém o render
 
 -Componentes são reutilizáveis
+
+-Props: Caracteristicas que um componente pode ser acesso. 
+Um props pode ser enviado para um componente como variável, constante, função
