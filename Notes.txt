@@ -14,3 +14,6 @@ React renderiza em tempo real (ao msm tempo das alterações no código fonte)
 
 -Props: Caracteristicas que um componente pode ser acesso. 
 Um props pode ser enviado para um componente como variável, constante, função
+
+-State: Similar ao props, mas privado e totalmente controlado pelo componente
+Prop não pode ser alterada, e é criada juntamente com um componente

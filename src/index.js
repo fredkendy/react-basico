@@ -4,18 +4,19 @@ import ReactDOM from 'react-dom';
 
 // Componente
 class Componente extends React.Component {
-    render() {
-        return(
-            <div>
-                <p>{this.props.informacoes.nome}</p>
-                <p>{this.props.informacoes.idade}</p>
-            </div>
-        );
+    
+    // Construtor
+    constructor(props) {
+        super(props);
+
+        this.state = {nome: 'Fred'};
     }
+
+    render() {
+        return <h1>{this.state.nome}</h1>;
+    }
+
 }
 
-// JSON
-var dados = {nome: "Fred", idade: 22};
-
 // Render
-ReactDOM.render(<Componente informacoes={dados} />, document.getElementById('root'));
+ReactDOM.render(<Componente />, document.getElementById('root'));
