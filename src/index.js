@@ -1,13 +1,21 @@
-// Importar módulos 
+// Importar módulos
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM  from 'react-dom';
 
-// Componente (transformar classe em componente)
-class MeuComponente extends React.Component{
+//Importar componentes
+import Componente01 from './Componente01';
+import Componente02 from './Componente02';
+
+//Componente do arquivo index.js
+class Principal extends React.Component {
     render() {
-        return <h1>Meu primeiro componente</h1>;
+        return(
+            <div>
+                <Componente01 />
+                <Componente02 />
+            </div>
+        )
     }
 }
 
-//Render (chamando componente no root)
-ReactDOM.render(<MeuComponente />, document.getElementById('root'));
+ReactDOM.render(<Principal />, document.getElementById('root'))
