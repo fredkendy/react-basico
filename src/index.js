@@ -1,43 +1,33 @@
-// Importar módulos
+// Importando módulos
 import React from 'react';
 import ReactDOM from 'react-dom';
 
 // Componente
 class MeuComponente extends React.Component {
-    
-    //Função
-    mensagem(nome) {
-        alert('Olá ' + nome);
+
+    // Construtor
+    constructor(props) {
+        super(props);
+
+        this.state = {texto: this.props.textoInicial};
     }
 
-    // Arrow Function
-    minhaArrowFunction = (curso) => {
-        alert('Estou fazendo o curso de ' + curso);
-    }
-
-    //Treinando onChange (capturando o que foi digitado)
-    teclado = (e) => {                  //é criado um objeto no navegador
-        console.log(e.target.value);    //value é uma propriedade de target do objeto
+    // Função (toda vez que mudar o input, vai atualizar o state)
+    minhaFuncao = (e) => {
+        this.setState({texto: e.target.value});
     }
 
     // Render
     render() {
-        
         return(
             <div>
-                <button onClick={this.mensagem.bind(this, 'Fred')}>Clique aqui</button>
-                <button onClick={() => this.minhaArrowFunction('ReactJS')}>Arrow Function</button>
-
-                <hr />
-
-                <input type='text' onChange={this.teclado} />
-
+                <h1>{this.state.texto}</h1>
+                <input type='text' onChange={this.minhaFuncao} value={this.state.texto} />
             </div>
-        ); 
-
+        );
     }
 
 }
 
 // Render
-ReactDOM.render(<MeuComponente />, document.getElementById('root'));
+ReactDOM.render(<MeuComponente textoInicial='Digite algo...' />, document.getElementById('root'));
