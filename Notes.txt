@@ -20,3 +20,8 @@ Prop não pode ser alterada, e é criada juntamente com um componente
 
 -Arrow functions diminuem o código e faz com que não precise do bind
 -OnChange: executado qdoo fazemos alteração no elemento HTML
+
+-LifeCycle:
+Mounting: cria componente
+Updating: Atualiza componente já existente
+Unmounting: Componente removido

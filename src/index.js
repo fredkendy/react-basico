@@ -1,28 +1,30 @@
 // Importando módulos
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './estilos.css';
 
 // Componente
 class MeuComponente extends React.Component {
+    
+    // Construtor
+    constructor(props) {
+        super(props);
 
-    render() {
-
-        const estilo = {
-            color: 'blue',
-            borderBottom: 'solid 5px green'
-        }
-
-        return(
-            <div>
-                <h1 style={{color: 'red', backgroundColor: 'gray'}}>CSS Interno (inline)</h1>
-                <h1 style={estilo}>CSS através de variáveis e constantes</h1>
-                <h1 className='minhaClasse'>CSS através de classes</h1>
-            </div>
-        )
-
+        this.state = {cor: 'vermelha'};
     }
+
+    // Depois de realizar o render
+    componentDidMount() {
+        setTimeout(() => {
+            this.setState({cor: 'azul'});
+        }, 2000);   //2 segundos
+    }
+
+    // Render
+    render() {
+        return <h1>Minha cor preferida é {this.state.cor}</h1>
         
+    }
+
 }
 
 ReactDOM.render(<MeuComponente />, document.getElementById('root'));
