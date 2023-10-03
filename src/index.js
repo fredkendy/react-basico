@@ -4,18 +4,36 @@ import ReactDOM from 'react-dom';
 
 // Componente
 class MeuComponente extends React.Component {
-    
+
+    // Constructor
+    constructor(props) {
+        super(props);
+
+        //Pensar no state como uma variável dinâmica. Vincular com input para ao alterar o input, alterar o state em tempo real
+        this.state = {
+            nome: '', 
+            idade: null
+        }
+    }
+
     // Função
-    minhaFuncao = (e) => {                  //e seria o form
-        e.preventDefault();                 //n dá o refresh após submit 
-        alert('Testando evento onSubmit');
+    funcaoNome = (campo) => {
+        this.setState({nome: campo.target.value});  //target e value são atributos reservados do navegador
+    }
+
+    funcaoIdade = (campo) => {
+        this.setState({idade: campo.target.value});
     }
 
     // Render
     render() {
         return(
-            <form onSubmit={this.minhaFuncao} action='http://www.ralflima.com'>
-                <input type='submit' />
+            <form>
+                <input type='text' placeholder='Nome' onChange={this.funcaoNome} /> <br/><br/>
+                <input type='number' placeholder='Idade' onChange={this.funcaoIdade} />
+
+                <p>{this.state.nome}</p>
+                <p>{this.state.idade}</p>
             </form>
         );
     }
