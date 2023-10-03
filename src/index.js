@@ -3,20 +3,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // Componente
-class Componente extends React.Component {
+class MeuComponente extends React.Component {
     
-    // Construtor
-    constructor(props) {
-        super(props);
-
-        this.state = {nome: 'Fred'};
+    //Função
+    mensagem(nome) {
+        alert('Olá ' + nome);
     }
 
+    // Render
     render() {
-        return <h1>{this.state.nome}</h1>;
+        //this: NESSE COMPONENTE...
+        //Enviando parametros com bind()
+        return <button onClick={this.mensagem.bind(this, 'Fred')}>Clique aqui</button>;
     }
 
 }
 
 // Render
-ReactDOM.render(<Componente />, document.getElementById('root'));
+ReactDOM.render(<MeuComponente />, document.getElementById('root'));
