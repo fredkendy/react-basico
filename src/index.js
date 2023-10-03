@@ -9,25 +9,34 @@ class MeuComponente extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {texto: this.props.textoInicial};
+        this.state = {exibir: false};
     }
 
-    // Função (toda vez que mudar o input, vai atualizar o state)
-    minhaFuncao = (e) => {
-        this.setState({texto: e.target.value});
+    // Função
+    alterarState = () => {
+        let converter = !this.state.exibir;
+        this.setState({exibir: converter});
     }
 
     // Render
     render() {
+
+        // Condicional
+        let meuTexto = '';
+        if (this.state.exibir == true) {
+            meuTexto = <h1>Olá</h1>
+        } else {
+            meuTexto = <h1>Tchau</h1>
+        }
+
         return(
             <div>
-                <h1>{this.state.texto}</h1>
-                <input type='text' onChange={this.minhaFuncao} value={this.state.texto} />
+                {meuTexto}
+                <button onClick={this.alterarState}>Clique Aqui</button>
             </div>
-        );
+        )
     }
 
 }
 
-// Render
-ReactDOM.render(<MeuComponente textoInicial='Digite algo...' />, document.getElementById('root'));
+ReactDOM.render(<MeuComponente />, document.getElementById('root'));
