@@ -16,21 +16,17 @@ class MeuComponente extends React.Component {
         }
     }
 
-    // Função
-    funcaoNome = (campo) => {
-        this.setState({nome: campo.target.value});  //target e value são atributos reservados do navegador
-    }
-
-    funcaoIdade = (campo) => {
-        this.setState({idade: campo.target.value});
+    // Função para enviar dados para os states
+    enviarParaState = (campo) => {
+        this.setState({[campo.target.name]: campo.target.value});  //vai pegar o atributo name (do input) dinamicamente
     }
 
     // Render
     render() {
         return(
             <form>
-                <input type='text' placeholder='Nome' onChange={this.funcaoNome} /> <br/><br/>
-                <input type='number' placeholder='Idade' onChange={this.funcaoIdade} />
+                <input name='nome' type='text' placeholder='Nome' onChange={this.enviarParaState} /> <br/><br/>
+                <input name='idade' type='number' placeholder='Idade' onChange={this.enviarParaState} />
 
                 <p>{this.state.nome}</p>
                 <p>{this.state.idade}</p>
