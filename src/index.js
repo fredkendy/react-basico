@@ -5,24 +5,19 @@ import ReactDOM from 'react-dom';
 // Componente
 class MeuComponente extends React.Component {
     
-    // Construtor
-    constructor(props) {
-        super(props);
-
-        this.state = {cor: 'vermelha'};
-    }
-
-    // Depois de realizar o render
-    componentDidMount() {
-        setTimeout(() => {
-            this.setState({cor: 'azul'});
-        }, 2000);   //2 segundos
+    // Função
+    minhaFuncao = (e) => {                  //e seria o form
+        e.preventDefault();                 //n dá o refresh após submit 
+        alert('Testando evento onSubmit');
     }
 
     // Render
     render() {
-        return <h1>Minha cor preferida é {this.state.cor}</h1>
-        
+        return(
+            <form onSubmit={this.minhaFuncao} action='http://www.ralflima.com'>
+                <input type='submit' />
+            </form>
+        );
     }
 
 }
