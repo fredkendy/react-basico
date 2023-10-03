@@ -17,3 +17,6 @@ Um props pode ser enviado para um componente como variável, constante, função
 
 -State: Similar ao props, mas privado e totalmente controlado pelo componente
 Prop não pode ser alterada, e é criada juntamente com um componente
+
+-Arrow functions diminuem o código e faz com que não precise do bind
+-OnChange: executado qdoo fazemos alteração no elemento HTML
